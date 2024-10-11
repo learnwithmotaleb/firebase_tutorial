@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
+import 'AsifTaj/Screen/home_screen.dart';
 import 'AsifTaj/Screen/splash_screen.dart';
 import 'Screen/homepage.dart';
 import 'Screen/login_page.dart';
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.blue,
         useMaterial3: false,
       ),
-      home:  SplashScreen(),
+      home:  HomeScreenF(),
     );
   }
 }

@@ -1,4 +1,5 @@
-import 'package:firebase_database/firebase_database.dart';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -34,7 +35,7 @@ class _FireStoreScreenState extends State<FireStoreScreen> {
 
   }
 
-  final databaseRef = FirebaseDatabase.instance.ref("User");
+  final fireStore = FirebaseFirestore.instance.collection("User");
 
 
 
@@ -51,7 +52,7 @@ class _FireStoreScreenState extends State<FireStoreScreen> {
 
       var userID = DateTime.now().millisecondsSinceEpoch.toString();
 
-      databaseRef.child(userID).set({
+      fireStore.doc().set({
         "id": userID.toString(),
         "title": title.text,
         'description': description.text
